@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,22 @@
 		EF2A1AEB2545971C0037BE15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */; };
 		EF2A1AF62545971C0037BE15 /* casumoTestTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1AF52545971C0037BE15 /* casumoTestTaskTests.swift */; };
 		EF2A1B012545971C0037BE15 /* casumoTestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1B002545971C0037BE15 /* casumoTestTaskUITests.swift */; };
+		EFC0CADA2545BF0F00ABA6A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */; };
+		EFC0CB052545C25E00ABA6A4 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB042545C25E00ABA6A4 /* EventsTableViewController.swift */; };
+		EFC0CB0A2545C3EC00ABA6A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB092545C3EC00ABA6A4 /* Event.swift */; };
+		EFC0CB132545DD5E00ABA6A4 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB122545DD5E00ABA6A4 /* Actor.swift */; };
+		EFC0CB182545DD6800ABA6A4 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB172545DD6800ABA6A4 /* Repo.swift */; };
+		EFC0CB1D2545DD7900ABA6A4 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB1C2545DD7900ABA6A4 /* Payload.swift */; };
+		EFC0CB222545DD8200ABA6A4 /* Org.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB212545DD8200ABA6A4 /* Org.swift */; };
+		EFC0CB272545E2B400ABA6A4 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB262545E2B400ABA6A4 /* Commit.swift */; };
+		EFC0CB2C2545E2D000ABA6A4 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB2B2545E2D000ABA6A4 /* Author.swift */; };
+		EFC0CB312545FAAA00ABA6A4 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB302545FAAA00ABA6A4 /* PullRequest.swift */; };
+		EFC0CB362545FAC800ABA6A4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB352545FAC800ABA6A4 /* User.swift */; };
+		EFC0CB3B2545FB6E00ABA6A4 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB3A2545FB6E00ABA6A4 /* Label.swift */; };
+		EFC0CB402545FC2800ABA6A4 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB3F2545FC2800ABA6A4 /* Owner.swift */; };
+		EFC0CB452546013500ABA6A4 /* Head.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB442546013500ABA6A4 /* Head.swift */; };
+		EFC0CB4A2546087E00ABA6A4 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB492546087E00ABA6A4 /* Base.swift */; };
+		EFC0CB4F25460E5600ABA6A4 /* MergedBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB4E25460E5600ABA6A4 /* MergedBy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +77,22 @@
 		EF2A1AFC2545971C0037BE15 /* casumoTestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casumoTestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1B002545971C0037BE15 /* casumoTestTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casumoTestTaskUITests.swift; sourceTree = "<group>"; };
 		EF2A1B022545971C0037BE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EFC0CB042545C25E00ABA6A4 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		EFC0CB092545C3EC00ABA6A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		EFC0CB122545DD5E00ABA6A4 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		EFC0CB172545DD6800ABA6A4 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		EFC0CB1C2545DD7900ABA6A4 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		EFC0CB212545DD8200ABA6A4 /* Org.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Org.swift; sourceTree = "<group>"; };
+		EFC0CB262545E2B400ABA6A4 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		EFC0CB2B2545E2D000ABA6A4 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		EFC0CB302545FAAA00ABA6A4 /* PullRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
+		EFC0CB352545FAC800ABA6A4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFC0CB3A2545FB6E00ABA6A4 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		EFC0CB3F2545FC2800ABA6A4 /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		EFC0CB442546013500ABA6A4 /* Head.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Head.swift; sourceTree = "<group>"; };
+		EFC0CB492546087E00ABA6A4 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		EFC0CB4E25460E5600ABA6A4 /* MergedBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergedBy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +133,6 @@
 				D820109CBBED69B38C335126 /* Pods-casumoTestTaskUITests.debug.xcconfig */,
 				25D4124CAFC6615A90A5754C /* Pods-casumoTestTaskUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -143,6 +174,9 @@
 				EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */,
 				EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */,
 				EF2A1AE22545971B0037BE15 /* ViewController.swift */,
+				EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */,
+				EFC0CB042545C25E00ABA6A4 /* EventsTableViewController.swift */,
+				EFC0CB0E2545DD3F00ABA6A4 /* Models */,
 				EF2A1AE42545971B0037BE15 /* Main.storyboard */,
 				EF2A1AE72545971C0037BE15 /* Assets.xcassets */,
 				EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */,
@@ -167,6 +201,27 @@
 				EF2A1B022545971C0037BE15 /* Info.plist */,
 			);
 			path = casumoTestTaskUITests;
+			sourceTree = "<group>";
+		};
+		EFC0CB0E2545DD3F00ABA6A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0CB122545DD5E00ABA6A4 /* Actor.swift */,
+				EFC0CB2B2545E2D000ABA6A4 /* Author.swift */,
+				EFC0CB492546087E00ABA6A4 /* Base.swift */,
+				EFC0CB262545E2B400ABA6A4 /* Commit.swift */,
+				EFC0CB092545C3EC00ABA6A4 /* Event.swift */,
+				EFC0CB442546013500ABA6A4 /* Head.swift */,
+				EFC0CB3A2545FB6E00ABA6A4 /* Label.swift */,
+				EFC0CB4E25460E5600ABA6A4 /* MergedBy.swift */,
+				EFC0CB212545DD8200ABA6A4 /* Org.swift */,
+				EFC0CB3F2545FC2800ABA6A4 /* Owner.swift */,
+				EFC0CB1C2545DD7900ABA6A4 /* Payload.swift */,
+				EFC0CB302545FAAA00ABA6A4 /* PullRequest.swift */,
+				EFC0CB172545DD6800ABA6A4 /* Repo.swift */,
+				EFC0CB352545FAC800ABA6A4 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,9 +444,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC0CADA2545BF0F00ABA6A4 /* NetworkManager.swift in Sources */,
+				EFC0CB402545FC2800ABA6A4 /* Owner.swift in Sources */,
 				EF2A1AE32545971B0037BE15 /* ViewController.swift in Sources */,
+				EFC0CB272545E2B400ABA6A4 /* Commit.swift in Sources */,
+				EFC0CB312545FAAA00ABA6A4 /* PullRequest.swift in Sources */,
 				EF2A1ADF2545971B0037BE15 /* AppDelegate.swift in Sources */,
+				EFC0CB4A2546087E00ABA6A4 /* Base.swift in Sources */,
+				EFC0CB1D2545DD7900ABA6A4 /* Payload.swift in Sources */,
+				EFC0CB362545FAC800ABA6A4 /* User.swift in Sources */,
+				EFC0CB182545DD6800ABA6A4 /* Repo.swift in Sources */,
+				EFC0CB3B2545FB6E00ABA6A4 /* Label.swift in Sources */,
+				EFC0CB2C2545E2D000ABA6A4 /* Author.swift in Sources */,
+				EFC0CB132545DD5E00ABA6A4 /* Actor.swift in Sources */,
+				EFC0CB052545C25E00ABA6A4 /* EventsTableViewController.swift in Sources */,
+				EFC0CB0A2545C3EC00ABA6A4 /* Event.swift in Sources */,
+				EFC0CB222545DD8200ABA6A4 /* Org.swift in Sources */,
 				EF2A1AE12545971B0037BE15 /* SceneDelegate.swift in Sources */,
+				EFC0CB4F25460E5600ABA6A4 /* MergedBy.swift in Sources */,
+				EFC0CB452546013500ABA6A4 /* Head.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

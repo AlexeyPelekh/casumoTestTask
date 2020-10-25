@@ -35,6 +35,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="JJu-ZI-7ed" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4wR-F1-WSA"/>
+                            <constraint firstItem="JJu-ZI-7ed" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="5SC-td-D1h"/>
                             <constraint firstItem="JJu-ZI-7ed" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="Cla-pP-87g"/>
                             <constraint firstAttribute="trailing" secondItem="JJu-ZI-7ed" secondAttribute="trailing" constant="20" id="ITz-BM-qLc"/>
                             <constraint firstItem="JJu-ZI-7ed" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="xYM-wn-J4S"/>
