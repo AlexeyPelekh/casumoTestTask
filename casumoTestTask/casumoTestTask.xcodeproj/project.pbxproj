@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		151DCF62B46169C423B37873 /* Pods_casumoTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */; };
+		3C8045C92F026D959CEC9ABE /* libPods-casumoTestTaskUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D249FC6AB5350871392A9C /* libPods-casumoTestTaskUITests.a */; };
+		80470CE0B74C4550157926C8 /* libPods-casumoTestTaskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */; };
 		EF2A1ADF2545971B0037BE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */; };
 		EF2A1AE12545971B0037BE15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */; };
 		EF2A1AE32545971B0037BE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1AE22545971B0037BE15 /* ViewController.swift */; };
@@ -35,6 +38,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01D249FC6AB5350871392A9C /* libPods-casumoTestTaskUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-casumoTestTaskUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casumoTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25D4124CAFC6615A90A5754C /* Pods-casumoTestTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskUITests/Pods-casumoTestTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
+		67DCFE077032F25DA7A645C8 /* Pods-casumoTestTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskTests.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		A62CEEE4D2A6A7F2E54D70E4 /* Pods-casumoTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTask.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC9729A87DD4E90DA94A990 /* Pods-casumoTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTask.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		B606949106EFB2AE3B24E3EF /* Pods-casumoTestTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D820109CBBED69B38C335126 /* Pods-casumoTestTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskUITests/Pods-casumoTestTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-casumoTestTaskTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1ADB2545971B0037BE15 /* casumoTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casumoTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				151DCF62B46169C423B37873 /* Pods_casumoTestTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80470CE0B74C4550157926C8 /* libPods-casumoTestTaskTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C8045C92F026D959CEC9ABE /* libPods-casumoTestTaskUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9879B4C7E689C10D94F691FA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A62CEEE4D2A6A7F2E54D70E4 /* Pods-casumoTestTask.debug.xcconfig */,
+				ACC9729A87DD4E90DA94A990 /* Pods-casumoTestTask.release.xcconfig */,
+				B606949106EFB2AE3B24E3EF /* Pods-casumoTestTaskTests.debug.xcconfig */,
+				67DCFE077032F25DA7A645C8 /* Pods-casumoTestTaskTests.release.xcconfig */,
+				D820109CBBED69B38C335126 /* Pods-casumoTestTaskUITests.debug.xcconfig */,
+				25D4124CAFC6615A90A5754C /* Pods-casumoTestTaskUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A4363A0D546039A0267CF745 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */,
+				DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */,
+				01D249FC6AB5350871392A9C /* libPods-casumoTestTaskUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF2A1AD22545971A0037BE15 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				EF2A1AF42545971C0037BE15 /* casumoTestTaskTests */,
 				EF2A1AFF2545971C0037BE15 /* casumoTestTaskUITests */,
 				EF2A1ADC2545971B0037BE15 /* Products */,
+				9879B4C7E689C10D94F691FA /* Pods */,
+				A4363A0D546039A0267CF745 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2A1B052545971C0037BE15 /* Build configuration list for PBXNativeTarget "casumoTestTask" */;
 			buildPhases = (
+				0FFFEA5988CB406C9D423898 /* [CP] Check Pods Manifest.lock */,
 				EF2A1AD72545971B0037BE15 /* Sources */,
 				EF2A1AD82545971B0037BE15 /* Frameworks */,
 				EF2A1AD92545971B0037BE15 /* Resources */,
+				A449F93D370D59167B0CFDBF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2A1B082545971C0037BE15 /* Build configuration list for PBXNativeTarget "casumoTestTaskTests" */;
 			buildPhases = (
+				71A2C3A0F676C502AB9157A2 /* [CP] Check Pods Manifest.lock */,
 				EF2A1AED2545971C0037BE15 /* Sources */,
 				EF2A1AEE2545971C0037BE15 /* Frameworks */,
 				EF2A1AEF2545971C0037BE15 /* Resources */,
@@ -170,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF2A1B0B2545971C0037BE15 /* Build configuration list for PBXNativeTarget "casumoTestTaskUITests" */;
 			buildPhases = (
+				530B5E976DCB80A060016D3C /* [CP] Check Pods Manifest.lock */,
 				EF2A1AF82545971C0037BE15 /* Sources */,
 				EF2A1AF92545971C0037BE15 /* Frameworks */,
 				EF2A1AFA2545971C0037BE15 /* Resources */,
@@ -252,6 +297,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FFFEA5988CB406C9D423898 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casumoTestTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		530B5E976DCB80A060016D3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casumoTestTaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A2C3A0F676C502AB9157A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-casumoTestTaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A449F93D370D59167B0CFDBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF2A1AD72545971B0037BE15 /* Sources */ = {
@@ -433,6 +564,7 @@
 		};
 		EF2A1B062545971C0037BE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A62CEEE4D2A6A7F2E54D70E4 /* Pods-casumoTestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +583,7 @@
 		};
 		EF2A1B072545971C0037BE15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC9729A87DD4E90DA94A990 /* Pods-casumoTestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +602,7 @@
 		};
 		EF2A1B092545971C0037BE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B606949106EFB2AE3B24E3EF /* Pods-casumoTestTaskTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +624,7 @@
 		};
 		EF2A1B0A2545971C0037BE15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67DCFE077032F25DA7A645C8 /* Pods-casumoTestTaskTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +646,7 @@
 		};
 		EF2A1B0C2545971C0037BE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D820109CBBED69B38C335126 /* Pods-casumoTestTaskUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +666,7 @@
 		};
 		EF2A1B0D2545971C0037BE15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25D4124CAFC6615A90A5754C /* Pods-casumoTestTaskUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
