@@ -48,7 +48,7 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CasumoLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Z3D-km-pft"/>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="Z3D-km-pft" secondAttribute="trailing" id="97E-dA-GjJ"/>
                                 <constraint firstItem="Z3D-km-pft" firstAttribute="leading" secondItem="NWv-DF-iEj" secondAttribute="leading" id="Du1-Sc-iBp"/>
@@ -68,21 +68,102 @@
             </objects>
             <point key="canvasLocation" x="2642.0289855072465" y="-309.375"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Detail View-->
         <scene sceneID="Fir-e0-0kh">
             <objects>
                 <viewController id="DKo-kh-WP6" customClass="DetailViewController" customModule="casumoTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RZX-uS-dej">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9a-rZ-sKp">
+                                <rect key="frame" x="20" y="210.5" width="36" height="21.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfW-BC-hKN">
+                                <rect key="frame" x="61" y="210.5" width="333" height="21.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hL-yT-8QD">
+                                <rect key="frame" x="20" y="178.5" width="17" height="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDE-3A-whZ">
+                                <rect key="frame" x="42" y="178.5" width="352" height="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op1-rp-ywC">
+                                <rect key="frame" x="20" y="242" width="75" height="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSk-XJ-gB2">
+                                <rect key="frame" x="20" y="128" width="374" height="35.5"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lBo-BF-wF2">
+                                <rect key="frame" x="20" y="284" width="374" height="578"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z91-a9-wqE">
+                                <rect key="frame" x="100" y="242" width="294" height="22"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ts5-hf-5Ad"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lBo-BF-wF2" firstAttribute="top" secondItem="Op1-rp-ywC" secondAttribute="bottom" constant="20" id="7qS-l0-AcH"/>
+                            <constraint firstItem="Op1-rp-ywC" firstAttribute="leading" secondItem="ts5-hf-5Ad" secondAttribute="leading" constant="20" id="8Sm-EH-aCH"/>
+                            <constraint firstItem="lBo-BF-wF2" firstAttribute="leading" secondItem="ts5-hf-5Ad" secondAttribute="leading" constant="20" id="9tT-dM-PMT"/>
+                            <constraint firstItem="eDE-3A-whZ" firstAttribute="leading" secondItem="2hL-yT-8QD" secondAttribute="trailing" constant="5" id="9wc-FK-XJ6"/>
+                            <constraint firstItem="Op1-rp-ywC" firstAttribute="top" secondItem="G9a-rZ-sKp" secondAttribute="bottom" constant="10" id="BrB-FR-EmU"/>
+                            <constraint firstItem="NSk-XJ-gB2" firstAttribute="top" secondItem="ts5-hf-5Ad" secondAttribute="top" constant="40" id="FR6-vG-RJd"/>
+                            <constraint firstItem="2hL-yT-8QD" firstAttribute="top" secondItem="NSk-XJ-gB2" secondAttribute="bottom" constant="15" id="G08-Ut-ZPQ"/>
+                            <constraint firstItem="G9a-rZ-sKp" firstAttribute="top" secondItem="2hL-yT-8QD" secondAttribute="bottom" constant="10" id="KZA-Dm-xIz"/>
+                            <constraint firstItem="ts5-hf-5Ad" firstAttribute="trailing" secondItem="Z91-a9-wqE" secondAttribute="trailing" constant="20" id="R9G-Dd-Uyf"/>
+                            <constraint firstItem="lBo-BF-wF2" firstAttribute="bottom" secondItem="ts5-hf-5Ad" secondAttribute="bottom" id="Rmz-GA-wMD"/>
+                            <constraint firstItem="ts5-hf-5Ad" firstAttribute="trailing" secondItem="NSk-XJ-gB2" secondAttribute="trailing" constant="20" id="S1W-N7-c3R"/>
+                            <constraint firstItem="ts5-hf-5Ad" firstAttribute="trailing" secondItem="PfW-BC-hKN" secondAttribute="trailing" constant="20" id="bUz-eD-k3f"/>
+                            <constraint firstItem="PfW-BC-hKN" firstAttribute="centerY" secondItem="G9a-rZ-sKp" secondAttribute="centerY" id="ece-0l-je1"/>
+                            <constraint firstItem="PfW-BC-hKN" firstAttribute="leading" secondItem="G9a-rZ-sKp" secondAttribute="trailing" constant="5" id="etX-7A-RCM"/>
+                            <constraint firstItem="Z91-a9-wqE" firstAttribute="leading" secondItem="Op1-rp-ywC" secondAttribute="trailing" constant="5" id="f6s-6d-8dV"/>
+                            <constraint firstItem="G9a-rZ-sKp" firstAttribute="leading" secondItem="ts5-hf-5Ad" secondAttribute="leading" constant="20" id="fd5-bS-WWR"/>
+                            <constraint firstItem="NSk-XJ-gB2" firstAttribute="leading" secondItem="ts5-hf-5Ad" secondAttribute="leading" constant="20" id="huy-jX-x6T"/>
+                            <constraint firstItem="Z91-a9-wqE" firstAttribute="centerY" secondItem="Op1-rp-ywC" secondAttribute="centerY" id="kbd-H0-NUW"/>
+                            <constraint firstItem="ts5-hf-5Ad" firstAttribute="trailing" secondItem="eDE-3A-whZ" secondAttribute="trailing" constant="20" id="lfc-Rm-eKv"/>
+                            <constraint firstItem="ts5-hf-5Ad" firstAttribute="trailing" secondItem="lBo-BF-wF2" secondAttribute="trailing" constant="20" id="tDS-C3-8JC"/>
+                            <constraint firstItem="eDE-3A-whZ" firstAttribute="centerY" secondItem="2hL-yT-8QD" secondAttribute="centerY" id="tn0-Ao-mwO"/>
+                            <constraint firstItem="2hL-yT-8QD" firstAttribute="leading" secondItem="ts5-hf-5Ad" secondAttribute="leading" constant="20" id="wTD-1r-MNn"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A7h-rA-0a2"/>
+                    <navigationItem key="navigationItem" title="Detail View" id="A7h-rA-0a2"/>
+                    <connections>
+                        <outlet property="eventCreatedAtLabel" destination="Z91-a9-wqE" id="Zd1-Mw-SAw"/>
+                        <outlet property="eventDetailInfoTextField" destination="lBo-BF-wF2" id="1oH-oA-COX"/>
+                        <outlet property="eventIdLabel" destination="eDE-3A-whZ" id="Kk2-9s-ahq"/>
+                        <outlet property="eventTypeLabel" destination="PfW-BC-hKN" id="sC0-Qd-emt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QqJ-vC-svO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="-309"/>
+            <point key="canvasLocation" x="3576.811594202899" y="-309.375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yfT-Hz-mVx">
@@ -105,6 +186,9 @@
     </scenes>
     <resources>
         <image name="CasumoLogo" width="101.5" height="110"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

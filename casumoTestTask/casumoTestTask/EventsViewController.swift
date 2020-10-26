@@ -16,6 +16,8 @@ class EventsViewController: UIViewController, UITableViewDelegate {
     private let networkManager = NetworkManager()
     private let searchController = UISearchController(searchResultsController: nil)
 
+    private var refreshControl = UIRefreshControl()
+
     private var events: [Event] = []
     private var filteredEvents: [Event] = []
 
@@ -26,6 +28,10 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         tableView.dataSource = self
 
         tableView.register(UINib(nibName: "EventTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "EventTableViewCell")
+
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        tableView.addSubview(refreshControl)
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -86,6 +92,28 @@ class EventsViewController: UIViewController, UITableViewDelegate {
             event = events[indexPath.row]
         }
         detailViewController.event = event
+    }
+
+    @objc func refresh(_ sender: AnyObject) {
+        networkManager.request(url: "https://api.github.com/events?per_page=100", completion: { response in
+            switch response {
+            case .success(let data):
+                self.refreshControl.endRefreshing()
+
+
+                if let events = try? JSONDecoder().decode([Event].self, from: data) {
+                    self.events = events
+                    self.tableView.reloadData()
+                }
+
+            case .failure(let error):
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+                self.present(alert, animated: true)
+            }
+        })
     }
 
     var isSearchBarEmpty: Bool {
@@ -181,7 +209,7 @@ extension EventsViewController: UITableViewDataSource {
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "DetailViewController", sender: indexPath)
     }
 }

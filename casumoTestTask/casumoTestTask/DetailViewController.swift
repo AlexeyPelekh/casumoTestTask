@@ -8,28 +8,33 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-//  @IBOutlet weak var detailDescriptionLabel: UILabel!
-//  @IBOutlet weak var candyImageView: UIImageView!
+    @IBOutlet weak var eventIdLabel: UILabel!
+    @IBOutlet weak var eventTypeLabel: UILabel!
+    @IBOutlet weak var eventCreatedAtLabel: UILabel!
+    @IBOutlet weak var eventDetailInfoTextField: UITextView!
 
-  var event: Event? {
-    didSet {
-      configureView()
+    var event: Event? {
+        didSet {
+            configureView()
+        }
     }
-  }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    configureView()
-  }
+        configureView()
+    }
 
-  func configureView() {
-//    if let event = event,
-//      let detailDescriptionLabel = detailDescriptionLabel,
-//      let candyImageView = candyImageView {
-//      detailDescriptionLabel.text = candy.name
-//      candyImageView.image = UIImage(named: candy.name)
-//      title = candy.category.rawValue
-//    }
-  }
+    func configureView() {
+        if let event = event,
+           let eventIdLabel = eventIdLabel,
+           let eventTypeLabel = eventTypeLabel,
+           let eventCreatedAtLabel = eventCreatedAtLabel,
+           let eventDetailInfoTextField = eventDetailInfoTextField {
+            eventIdLabel.text = event.id
+            eventTypeLabel.text = event.type
+            eventCreatedAtLabel.text = event.created_at
+            eventDetailInfoTextField.text = String(describing: event)
+        }
+    }
 }
