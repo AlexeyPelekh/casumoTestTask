@@ -9,14 +9,14 @@ import Foundation
 
 struct Event: Decodable {
     let id: String?
-    let type: EventType?
+    let type: String?
     let actor: Actor?
     let repo: Repo?
     let payload: Payload?
     let isPublic: Bool?
     let created_at: String?
 
-    enum EventType: Decodable {
+    enum EventType: String, Decodable {
         case all
         case pushEvent
         case pullRequestEvent

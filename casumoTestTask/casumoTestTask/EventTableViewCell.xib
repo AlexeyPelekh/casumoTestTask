@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="115" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="casumoTestTask" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="115" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="casumoTestTask" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                <rect key="frame" x="0.0" y="0.0" width="261" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biy-LX-xvh">
@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-rz-498">
-                        <rect key="frame" x="61" y="10" width="244" height="30"/>
+                        <rect key="frame" x="61" y="10" width="185" height="30"/>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-Nj-Qy5">
-                        <rect key="frame" x="42" y="45" width="263" height="22"/>
+                        <rect key="frame" x="42" y="45" width="204" height="22"/>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -54,7 +54,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC9-Ve-t3D">
-                        <rect key="frame" x="100" y="72" width="189" height="22"/>
+                        <rect key="frame" x="100" y="72" width="138" height="22"/>
                         <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -89,6 +89,7 @@
             <connections>
                 <outlet property="eventCreatedAtLabel" destination="WC9-Ve-t3D" id="7m1-0A-oCu"/>
                 <outlet property="eventIdLabel" destination="b8n-Nj-Qy5" id="FCt-Kl-XEX"/>
+                <outlet property="eventTypeColorView" destination="Biy-LX-xvh" id="4Wa-Z6-b7h"/>
                 <outlet property="eventTypeLabel" destination="kbZ-rz-498" id="dxm-Ze-sFH"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="160.37946428571428"/>

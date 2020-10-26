@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EventsViewController: UIViewController {
+class EventsViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var searchFooter: SearchFooter!
@@ -21,6 +21,11 @@ class EventsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableView.register(UINib(nibName: "EventTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "EventTableViewCell")
 
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -67,7 +72,7 @@ class EventsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            segue.identifier == "ShowDetailSegue",
+            segue.identifier == "DetailViewController",
             let indexPath = tableView.indexPathForSelectedRow,
             let detailViewController = segue.destination as? DetailViewController
         else {
@@ -94,15 +99,15 @@ class EventsViewController: UIViewController {
 
     func filterContentForSearchText(_ searchText: String,
                                     eventType: Event.EventType? = nil) {
-        filteredEvents = events.filter { (event: Event) -> Bool in
-            let doesCategoryMatch = eventType == .all || event.type == eventType
-
-            if isSearchBarEmpty {
-                return doesCategoryMatch
-            } else {
-                return doesCategoryMatch && String(event.id ?? "").contains(searchText.lowercased())
-            }
-        }
+//        filteredEvents = events.filter { (event: Event) -> Bool in
+//            let doesCategoryMatch = eventType == .all || event.type == eventType
+//
+//            if isSearchBarEmpty {
+//                return doesCategoryMatch
+//            } else {
+//                return doesCategoryMatch && String(event.id ?? "").contains(searchText.lowercased())
+//            }
+//        }
 
         tableView.reloadData()
     }
@@ -145,7 +150,7 @@ extension EventsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as? EventTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
         let event: Event
         if isFiltering {
             event = filteredEvents[indexPath.row]
@@ -153,11 +158,31 @@ extension EventsViewController: UITableViewDataSource {
             event = events[indexPath.row]
         }
 
-        cell?.eventTypeLabel?.text = event.type?.rawValue
-        cell?.eventIdLabel?.text = event.id
-        cell?.eventCreatedAtLabel?.text = event.created_at
+        cell.eventTypeLabel?.text = event.type
+        cell.eventIdLabel?.text = event.id
+        cell.eventCreatedAtLabel?.text = event.created_at
 
-        return cell ?? EventTableViewCell()
+        switch event.type {
+        case Event.EventType.all.rawValue:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        case Event.EventType.pushEvent.rawValue:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        case Event.EventType.pullRequestEvent.rawValue:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        case Event.EventType.createEvent.rawValue:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0.9686274529, green: 0.78039217, blue: 0.3450980484, alpha: 1)
+        case Event.EventType.other.rawValue:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+
+        default:
+            cell.eventTypeColorView.backgroundColor = #colorLiteral(red: 0.2244646549, green: 0.9471392035, blue: 1, alpha: 1)
+        }
+
+        return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegue(withIdentifier: "DetailViewController", sender: indexPath)
     }
 }
 
