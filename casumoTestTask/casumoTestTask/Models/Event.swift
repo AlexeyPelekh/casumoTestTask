@@ -7,15 +7,48 @@
 
 import Foundation
 
-struct Event {
+struct Event: Decodable {
     let id: String?
-    let type: String?
+    let type: EventType?
     let actor: Actor?
     let repo: Repo?
     let payload: Payload?
     let isPublic: Bool?
     let created_at: String?
+
+    enum EventType: Decodable {
+        case all
+        case pushEvent
+        case pullRequestEvent
+        case createEvent
+        case other
+    }
 }
 
-// MARK: - Decodable
-extension Event: Decodable {}
+extension Event.EventType: CaseIterable { }
+
+extension Event.EventType: RawRepresentable {
+    typealias RawValue = String
+
+    init?(rawValue: RawValue) {
+        switch rawValue {
+        case "All": self = .all
+        case "PushEvent": self = .pushEvent
+        case "PullRequestEvent": self = .pullRequestEvent
+        case "CreateEvent": self = .createEvent
+        case "Other": self = .other
+
+        default: return nil
+        }
+    }
+
+    var rawValue: RawValue {
+        switch self {
+        case .all: return "All"
+        case .pushEvent: return "PushEvent"
+        case .pullRequestEvent: return "PullRequestEvent"
+        case .createEvent: return "CreateEvent"
+        case .other: return "Other"
+        }
+    }
+}

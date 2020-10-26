@@ -7,13 +7,10 @@
 
 import Foundation
 
-struct Head {
+struct Head: Decodable {
     let label: String?
     let ref: String?
     let sha: String?
     let user: User?
     let repo: Repo?
 }
-
-// MARK: - Decodable
-extension Head: Decodable {}

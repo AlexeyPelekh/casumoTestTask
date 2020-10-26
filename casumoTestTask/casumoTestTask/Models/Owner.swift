@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Owner {
+struct Owner: Decodable {
     let login: String?
     let id: Int?
     let node_id: String?
@@ -27,6 +27,3 @@ struct Owner {
     let type: String?
     let site_admin: Bool?
 }
-
-// MARK: - Decodable
-extension Owner: Decodable {}

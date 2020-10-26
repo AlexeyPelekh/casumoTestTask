@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Label {
+struct Label: Decodable {
     let id: Int?
     let node_id: String?
     let url: String?
@@ -16,6 +16,3 @@ struct Label {
     let isDefault: Bool?
     let description: String?
 }
-
-// MARK: - Decodable
-extension Label: Decodable {}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PullRequest {
+struct PullRequest: Decodable {
     let url: String?
     let id: Int?
     let node_id: String?
@@ -40,7 +40,6 @@ struct PullRequest {
     let statuses_url: String?
     let head: Head?
     let base: Base?
-    let _links: [String]?
     let author_association: String?
     let active_lock_reason: String?
     let merged: Bool?
@@ -55,7 +54,5 @@ struct PullRequest {
     let additions: Int?
     let deletions: Int?
     let changed_files: Int?
+    let href: String?
 }
-
-// MARK: - Decodable
-extension PullRequest: Decodable {}

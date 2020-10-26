@@ -7,13 +7,10 @@
 
 import Foundation
 
-struct Commit {
+struct Commit: Decodable {
     let sha: String?
     let author: Author?
     let message: String?
     let isDistinct: Bool?
     let url: String?
 }
-
-// MARK: - Decodable
-extension Commit: Decodable {}

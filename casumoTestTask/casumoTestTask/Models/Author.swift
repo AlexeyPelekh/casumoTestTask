@@ -7,10 +7,7 @@
 
 import Foundation
 
-struct Author {
+struct Author: Decodable {
     let email: String?
     let name: String?
 }
-
-// MARK: - Decodable
-extension Author: Decodable {}

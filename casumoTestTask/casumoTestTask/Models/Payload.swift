@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Payload {
+struct Payload: Decodable {
+    let action: String?
     let push_id: Int?
     let size: Int?
     let distinct_size: Int?
@@ -15,8 +16,6 @@ struct Payload {
     let head: String?
     let before: String?
     let comits: [Commit]?
-    let pull_request: PullRequest?
+//    let pull_request: PullRequest?
+    let comment: Comment?
 }
-
-// MARK: - Decodable
-extension Payload: Decodable {}

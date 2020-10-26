@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable {
     let login: String?
     let id: Int?
     let node_id: String?
@@ -27,6 +27,3 @@ struct User {
     let type: String?
     let site_admin: Bool?
 }
-
-// MARK: - Decodable
-extension User: Decodable {}

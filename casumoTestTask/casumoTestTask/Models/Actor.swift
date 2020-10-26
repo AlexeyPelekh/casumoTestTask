@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Actor {
+struct Actor: Decodable {
     let id: Int?
     let login: String?
     let display_login: String?
@@ -15,6 +15,3 @@ struct Actor {
     let url: String?
     let avatar_url: String?
 }
-
-// MARK: - Decodable
-extension Actor: Decodable {}

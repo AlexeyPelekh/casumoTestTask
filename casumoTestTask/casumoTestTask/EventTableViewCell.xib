@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="115" id="KGk-i7-Jjw" customClass="EventTableViewCell" customModule="casumoTestTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Biy-LX-xvh">
+                        <rect key="frame" x="0.0" y="0.0" width="10" height="115"/>
+                        <color key="backgroundColor" red="0.47421258824144014" green="0.93374734511482227" blue="0.99193829298019409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="10" id="iOd-Rj-m3A"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="type:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edg-TN-66h">
+                        <rect key="frame" x="20" y="10" width="36" height="30"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbZ-rz-498">
+                        <rect key="frame" x="61" y="10" width="244" height="30"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gq1-bO-A6t">
+                        <rect key="frame" x="20" y="45" width="17" height="22"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8n-Nj-Qy5">
+                        <rect key="frame" x="42" y="45" width="263" height="22"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFZ-6X-oAf">
+                        <rect key="frame" x="20" y="72" width="75" height="22"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WC9-Ve-t3D">
+                        <rect key="frame" x="100" y="72" width="189" height="22"/>
+                        <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="WC9-Ve-t3D" firstAttribute="leading" secondItem="DFZ-6X-oAf" secondAttribute="trailing" constant="5" id="0Bh-VP-QQf"/>
+                    <constraint firstItem="Biy-LX-xvh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="2Pc-G8-EoL"/>
+                    <constraint firstItem="Biy-LX-xvh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="68d-Ds-8jo"/>
+                    <constraint firstItem="DFZ-6X-oAf" firstAttribute="top" secondItem="Gq1-bO-A6t" secondAttribute="bottom" constant="5" id="98s-Yb-ado"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="DFZ-6X-oAf" secondAttribute="bottom" constant="10" id="HA7-3Z-1CB"/>
+                    <constraint firstItem="kbZ-rz-498" firstAttribute="leading" secondItem="edg-TN-66h" secondAttribute="trailing" constant="5" id="I32-Nt-qk6"/>
+                    <constraint firstItem="kbZ-rz-498" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Nhc-JA-YV6"/>
+                    <constraint firstItem="Gq1-bO-A6t" firstAttribute="top" secondItem="edg-TN-66h" secondAttribute="bottom" constant="5" id="PEO-Ue-KKh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WC9-Ve-t3D" secondAttribute="trailing" constant="15" id="X6q-7O-3XZ"/>
+                    <constraint firstItem="DFZ-6X-oAf" firstAttribute="leading" secondItem="Biy-LX-xvh" secondAttribute="trailing" constant="10" id="YvN-EE-Kse"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="WC9-Ve-t3D" secondAttribute="bottom" constant="10" id="a9X-12-a0g"/>
+                    <constraint firstAttribute="bottom" secondItem="Biy-LX-xvh" secondAttribute="bottom" id="aiX-7K-SPH"/>
+                    <constraint firstAttribute="trailing" secondItem="kbZ-rz-498" secondAttribute="trailing" constant="15" id="gLT-IH-hfN"/>
+                    <constraint firstItem="DFZ-6X-oAf" firstAttribute="top" secondItem="Gq1-bO-A6t" secondAttribute="bottom" constant="5" id="jO1-iL-D3r"/>
+                    <constraint firstItem="Gq1-bO-A6t" firstAttribute="leading" secondItem="Biy-LX-xvh" secondAttribute="trailing" constant="10" id="kmS-6u-KQm"/>
+                    <constraint firstItem="edg-TN-66h" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="lxM-vM-iMh"/>
+                    <constraint firstItem="edg-TN-66h" firstAttribute="leading" secondItem="Biy-LX-xvh" secondAttribute="trailing" constant="10" id="nIj-Bl-aSR"/>
+                    <constraint firstItem="WC9-Ve-t3D" firstAttribute="top" secondItem="b8n-Nj-Qy5" secondAttribute="bottom" constant="5" id="pvX-Bu-OvH"/>
+                    <constraint firstItem="b8n-Nj-Qy5" firstAttribute="top" secondItem="kbZ-rz-498" secondAttribute="bottom" constant="5" id="rkx-U8-I1j"/>
+                    <constraint firstItem="b8n-Nj-Qy5" firstAttribute="leading" secondItem="Gq1-bO-A6t" secondAttribute="trailing" constant="5" id="rwm-io-9Ii"/>
+                    <constraint firstItem="b8n-Nj-Qy5" firstAttribute="top" secondItem="edg-TN-66h" secondAttribute="bottom" constant="5" id="v8i-PO-BTX"/>
+                    <constraint firstAttribute="trailing" secondItem="b8n-Nj-Qy5" secondAttribute="trailing" constant="15" id="vPg-bS-PAD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="eventCreatedAtLabel" destination="WC9-Ve-t3D" id="7m1-0A-oCu"/>
+                <outlet property="eventIdLabel" destination="b8n-Nj-Qy5" id="FCt-Kl-XEX"/>
+                <outlet property="eventTypeLabel" destination="kbZ-rz-498" id="dxm-Ze-sFH"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="160.37946428571428"/>
+        </tableViewCell>
+    </objects>
+</document>

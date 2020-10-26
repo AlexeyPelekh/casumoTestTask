@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repo {
+struct Repo: Decodable {
     let id: Int?
     let node_id: String?
     let name: String?
@@ -76,12 +76,9 @@ struct Repo {
     let archived: Bool?
     let disabled: Bool?
     let open_issues_count: Int?
-    let license: String?
+    let license: License?
     let forks: Int?
     let open_issues: Int?
     let watchers: Int?
     let default_branch: String?
 }
-
-// MARK: - Decodable
-extension Repo: Decodable {}
