@@ -209,6 +209,14 @@
 			path = casumoTestTaskUITests;
 			sourceTree = "<group>";
 		};
+		EFB4C9AC2548B187009E2679 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EFF27C5825472A1D00D47DD6 /* EventTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		EFC0CB0E2545DD3F00ABA6A4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +261,8 @@
 			isa = PBXGroup;
 			children = (
 				EF2A1AE42545971B0037BE15 /* Main.storyboard */,
-				EFF27C5825472A1D00D47DD6 /* EventTableViewCell.xib */,
 				EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */,
+				EFB4C9AC2548B187009E2679 /* Cells */,
 			);
 			path = UI;
 			sourceTree = "<group>";
