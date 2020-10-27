@@ -183,20 +183,10 @@
 		EF2A1ADD2545971B0037BE15 /* casumoTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				EFF27B172546F7A200D47DD6 /* SearchFooter.swift */,
-				EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */,
-				EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */,
-				EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */,
-				EFF27B122546F75C00D47DD6 /* EventsViewController.swift */,
-				EFCDFBE12548622D00463C08 /* UIColor+Extensions.swift */,
-				EFF27C5225470BB500D47DD6 /* DetailViewController.swift */,
-				EFF27C5725472A1C00D47DD6 /* EventTableViewCell.swift */,
-				EFF27C5825472A1D00D47DD6 /* EventTableViewCell.xib */,
-				EFC0CB0E2545DD3F00ABA6A4 /* Models */,
-				EF2A1AE42545971B0037BE15 /* Main.storyboard */,
-				EF2A1AE72545971C0037BE15 /* Assets.xcassets */,
-				EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */,
-				EF2A1AEC2545971C0037BE15 /* Info.plist */,
+				EFCDFC2F254877FF00463C08 /* Common */,
+				EFCDFC432548789F00463C08 /* Features */,
+				EFCDFC2C254877AA00463C08 /* Resources */,
+				EFCDFC3F2548786400463C08 /* Supporting Files */,
 			);
 			path = casumoTestTask;
 			sourceTree = "<group>";
@@ -225,8 +215,8 @@
 				EFC0CB122545DD5E00ABA6A4 /* Actor.swift */,
 				EFC0CB2B2545E2D000ABA6A4 /* Author.swift */,
 				EFC0CB492546087E00ABA6A4 /* Base.swift */,
-				EFC0CB262545E2B400ABA6A4 /* Commit.swift */,
 				EFF27C662547374400D47DD6 /* Comment.swift */,
+				EFC0CB262545E2B400ABA6A4 /* Commit.swift */,
 				EFC0CB092545C3EC00ABA6A4 /* Event.swift */,
 				EFC0CB442546013500ABA6A4 /* Head.swift */,
 				EFC0CB3A2545FB6E00ABA6A4 /* Label.swift */,
@@ -240,6 +230,104 @@
 				EFC0CB352545FAC800ABA6A4 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EFCDFC2C254877AA00463C08 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDFC2E254877DE00463C08 /* UI */,
+				EFCDFC2D254877BD00463C08 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EFCDFC2D254877BD00463C08 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EF2A1AE72545971C0037BE15 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EFCDFC2E254877DE00463C08 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EF2A1AE42545971B0037BE15 /* Main.storyboard */,
+				EFF27C5825472A1D00D47DD6 /* EventTableViewCell.xib */,
+				EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EFCDFC2F254877FF00463C08 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDFC3B2548784700463C08 /* Managers */,
+				EFCDFC372548782400463C08 /* ReusableUI */,
+				EFCDFC332548781400463C08 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		EFCDFC332548781400463C08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDFBE12548622D00463C08 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EFCDFC372548782400463C08 /* ReusableUI */ = {
+			isa = PBXGroup;
+			children = (
+				EFF27B172546F7A200D47DD6 /* SearchFooter.swift */,
+			);
+			path = ReusableUI;
+			sourceTree = "<group>";
+		};
+		EFCDFC3B2548784700463C08 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		EFCDFC3F2548786400463C08 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */,
+				EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */,
+				EF2A1AEC2545971C0037BE15 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EFCDFC432548789F00463C08 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				EFCDFC4B254878C800463C08 /* Cells */,
+				EFCDFC47254878AD00463C08 /* Controllers */,
+				EFC0CB0E2545DD3F00ABA6A4 /* Models */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		EFCDFC47254878AD00463C08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EFF27B122546F75C00D47DD6 /* EventsViewController.swift */,
+				EFF27C5225470BB500D47DD6 /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EFCDFC4B254878C800463C08 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EFF27C5725472A1C00D47DD6 /* EventTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -12,10 +12,8 @@ import UIKit
 extension UIColor {
     static func colorForEventType(eventType: String?) -> UIColor {
         switch eventType {
-        case Event.EventType.all.rawValue:
-            return #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         case Event.EventType.pushEvent.rawValue:
-            return #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            return #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         case Event.EventType.pullRequestEvent.rawValue:
             return #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         case Event.EventType.createEvent.rawValue:
@@ -23,7 +21,7 @@ extension UIColor {
         case Event.EventType.pushEvent.rawValue:
             return #colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)
         case Event.EventType.pullRequestEvent.rawValue:
-            return #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+            return #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         case Event.EventType.createEvent.rawValue:
             return #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
         case Event.EventType.publicEvent.rawValue:
