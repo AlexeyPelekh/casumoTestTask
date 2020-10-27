@@ -12,7 +12,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var eventTypeLabel: UILabel!
     @IBOutlet weak var eventCreatedAtLabel: UILabel!
     @IBOutlet weak var eventDetailInfoTextField: UITextView!
-
+    @IBOutlet weak var accessoryView: UIView!
+    
     var event: Event? {
         didSet {
             configureView()
@@ -35,6 +36,7 @@ class DetailViewController: UIViewController {
             eventTypeLabel.text = event.type
             eventCreatedAtLabel.text = event.created_at
             eventDetailInfoTextField.text = String(describing: event)
+            accessoryView.backgroundColor = UIColor.colorForEventType(eventType: event.type)
         }
     }
 }

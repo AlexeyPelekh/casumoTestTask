@@ -12,16 +12,4 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventIdLabel: UILabel!
     @IBOutlet weak var eventCreatedAtLabel: UILabel!
     @IBOutlet weak var eventTypeColorView: UIView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

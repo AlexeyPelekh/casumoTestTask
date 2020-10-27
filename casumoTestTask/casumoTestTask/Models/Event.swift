@@ -21,6 +21,15 @@ struct Event: Decodable {
         case pushEvent
         case pullRequestEvent
         case createEvent
+        case publicEvent
+        case deleteEvent
+        case issueCommentEvent
+        case watchEvent
+        case forkEvent
+        case issuesEvent
+        case pullRequestReviewCommentEvent
+        case pullRequestReviewEvent
+        case commitCommentEvent
         case other
     }
 }
@@ -36,6 +45,15 @@ extension Event.EventType: RawRepresentable {
         case "PushEvent": self = .pushEvent
         case "PullRequestEvent": self = .pullRequestEvent
         case "CreateEvent": self = .createEvent
+        case "PublicEvent": self = .publicEvent
+        case "DeleteEvent": self = .deleteEvent
+        case "IssueCommentEvent": self = .issueCommentEvent
+        case "WatchEvent": self = .watchEvent
+        case "ForkEvent": self = .forkEvent
+        case "IssuesEvent": self = .issuesEvent
+        case "PullRequestReviewCommentEvent": self = .pullRequestReviewCommentEvent
+        case "PullRequestReviewEvent": self = .pullRequestReviewEvent
+        case "CommitCommentEvent": self = .commitCommentEvent
         case "Other": self = .other
 
         default: return nil
@@ -48,6 +66,15 @@ extension Event.EventType: RawRepresentable {
         case .pushEvent: return "PushEvent"
         case .pullRequestEvent: return "PullRequestEvent"
         case .createEvent: return "CreateEvent"
+        case .publicEvent: return "PublicEvent"
+        case .deleteEvent: return "DeleteEvent"
+        case .issueCommentEvent: return "IssueCommentEvent"
+        case .watchEvent: return "WatchEvent"
+        case .forkEvent: return "ForkEvent"
+        case .issuesEvent: return "IssuesEvent"
+        case .pullRequestReviewCommentEvent: return "PullRequestReviewCommentEvent"
+        case .pullRequestReviewEvent: return "PullRequestReviewEvent"
+        case .commitCommentEvent: return "CommitCommentEvent"
         case .other: return "Other"
         }
     }

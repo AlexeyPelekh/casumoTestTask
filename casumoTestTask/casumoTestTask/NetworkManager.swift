@@ -7,10 +7,10 @@
 
 import Alamofire
 
-class NetworkManager {
+final class NetworkManager {
     private var sessionManager = Alamofire.SessionManager()
 
-    func request(url: URLConvertible,
+    func request(url: URLConvertible = Constants.eventsFinalUrl,
                  method: HTTPMethod = .get,
                  parameters: Parameters? = nil,
                  headers: HTTPHeaders? = nil,
@@ -29,17 +29,13 @@ class NetworkManager {
                 }
             })
     }
+}
 
-    func request(_ urlRequest: URLRequestConvertible,
-                 completion: @escaping (Result<Data>) -> Void) {
-        SessionManager.default.request(urlRequest).validate().responseData { (dataResponse) in
-            switch dataResponse.result {
-            case .success(let data):
-                completion(.success(data))
-
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+private extension NetworkManager {
+    struct Constants {
+        static let eventsFinalUrl = eventsBaseUrl + eventsPerPageQuery
+        static let eventsBaseUrl = "https://api.github.com/events"
+        static let eventsPerRequestCount = 100
+        static let eventsPerPageQuery = "?per_page=\(eventsPerRequestCount)"
     }
 }
