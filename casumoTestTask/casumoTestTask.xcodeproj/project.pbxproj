@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		151DCF62B46169C423B37873 /* Pods_casumoTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */; };
 		3C8045C92F026D959CEC9ABE /* libPods-casumoTestTaskUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D249FC6AB5350871392A9C /* libPods-casumoTestTaskUITests.a */; };
-		80470CE0B74C4550157926C8 /* libPods-casumoTestTaskTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */; };
+		6BBED2166E5CB79C50C77D27 /* Pods_casumoTestTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7972197C198C6649F2082731 /* Pods_casumoTestTaskTests.framework */; };
 		EF2A1ADF2545971B0037BE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */; };
 		EF2A1AE12545971B0037BE15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */; };
 		EF2A1AE62545971B0037BE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2A1AE42545971B0037BE15 /* Main.storyboard */; };
@@ -17,6 +17,7 @@
 		EF2A1AEB2545971C0037BE15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF2A1AE92545971C0037BE15 /* LaunchScreen.storyboard */; };
 		EF2A1AF62545971C0037BE15 /* casumoTestTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1AF52545971C0037BE15 /* casumoTestTaskTests.swift */; };
 		EF2A1B012545971C0037BE15 /* casumoTestTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2A1B002545971C0037BE15 /* casumoTestTaskUITests.swift */; };
+		EF9D39F92549C951009B080C /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D39F82549C951009B080C /* NetworkManagerMock.swift */; };
 		EFC0CADA2545BF0F00ABA6A4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */; };
 		EFC0CB0A2545C3EC00ABA6A4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB092545C3EC00ABA6A4 /* Event.swift */; };
 		EFC0CB132545DD5E00ABA6A4 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC0CB122545DD5E00ABA6A4 /* Actor.swift */; };
@@ -64,11 +65,11 @@
 		054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casumoTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D4124CAFC6615A90A5754C /* Pods-casumoTestTaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskUITests.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskUITests/Pods-casumoTestTaskUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67DCFE077032F25DA7A645C8 /* Pods-casumoTestTaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskTests.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		7972197C198C6649F2082731 /* Pods_casumoTestTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_casumoTestTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62CEEE4D2A6A7F2E54D70E4 /* Pods-casumoTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTask.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		ACC9729A87DD4E90DA94A990 /* Pods-casumoTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTask.release.xcconfig"; path = "Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask.release.xcconfig"; sourceTree = "<group>"; };
 		B606949106EFB2AE3B24E3EF /* Pods-casumoTestTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D820109CBBED69B38C335126 /* Pods-casumoTestTaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casumoTestTaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-casumoTestTaskUITests/Pods-casumoTestTaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-casumoTestTaskTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1ADB2545971B0037BE15 /* casumoTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = casumoTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1ADE2545971B0037BE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF2A1AE02545971B0037BE15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		EF2A1AFC2545971C0037BE15 /* casumoTestTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = casumoTestTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF2A1B002545971C0037BE15 /* casumoTestTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = casumoTestTaskUITests.swift; sourceTree = "<group>"; };
 		EF2A1B022545971C0037BE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF9D39F82549C951009B080C /* NetworkManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		EFC0CAD92545BF0F00ABA6A4 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EFC0CB092545C3EC00ABA6A4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EFC0CB122545DD5E00ABA6A4 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80470CE0B74C4550157926C8 /* libPods-casumoTestTaskTests.a in Frameworks */,
+				6BBED2166E5CB79C50C77D27 /* Pods_casumoTestTaskTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				054E4F0B7E830547845BAE97 /* Pods_casumoTestTask.framework */,
-				DC76A11C24BDE187E99AD183 /* libPods-casumoTestTaskTests.a */,
 				01D249FC6AB5350871392A9C /* libPods-casumoTestTaskUITests.a */,
+				7972197C198C6649F2082731 /* Pods_casumoTestTaskTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				EF2A1AF52545971C0037BE15 /* casumoTestTaskTests.swift */,
+				EF9D39F82549C951009B080C /* NetworkManagerMock.swift */,
 				EF2A1AF72545971C0037BE15 /* Info.plist */,
 			);
 			path = casumoTestTaskTests;
@@ -368,6 +371,7 @@
 				EF2A1AED2545971C0037BE15 /* Sources */,
 				EF2A1AEE2545971C0037BE15 /* Frameworks */,
 				EF2A1AEF2545971C0037BE15 /* Resources */,
+				CAEF7B7663BDC006B29BDC18 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -552,6 +556,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casumoTestTask/Pods-casumoTestTask-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CAEF7B7663BDC006B29BDC18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casumoTestTaskTests/Pods-casumoTestTaskTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -590,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF9D39F92549C951009B080C /* NetworkManagerMock.swift in Sources */,
 				EF2A1AF62545971C0037BE15 /* casumoTestTaskTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

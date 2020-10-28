@@ -1,17 +1,17 @@
 def common_pods_ios
   inhibit_all_warnings!
   use_frameworks!
-  
+
   pod 'Alamofire', '~> 4.8.2'
 end
 
 target 'casumoTestTask' do
    common_pods_ios
-end	
+end
 
 target 'casumoTestTaskTests' do
     inherit! :search_paths
-    # Pods for testing
+    common_pods_ios
 end
 
 target 'casumoTestTaskUITests' do

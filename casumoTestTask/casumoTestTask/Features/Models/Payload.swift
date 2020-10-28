@@ -16,6 +16,5 @@ struct Payload: Decodable {
     let head: String?
     let before: String?
     let comits: [Commit]?
-//    let pull_request: PullRequest?
     let comment: Comment?
 }

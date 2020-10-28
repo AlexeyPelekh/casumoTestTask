@@ -38,7 +38,7 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         setupNotifications()
         getEvents()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -119,14 +119,14 @@ class EventsViewController: UIViewController, UITableViewDelegate {
 
         notificationCenter.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification,
                                        object: nil, queue: .main) { (notification) in
-            self.handleKeyboard(notification: notification) }
+            self.handleKeyboardState(notification: notification) }
 
         notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification,
                                        object: nil, queue: .main) { (notification) in
-            self.handleKeyboard(notification: notification) }
+            self.handleKeyboardState(notification: notification) }
     }
 
-    private func filterContentForSearchText(_ searchText: String,
+    private func filterTableViewContentForSearchText(_ searchText: String,
                                             eventType: Event.EventType? = nil) {
         filteredEvents = events.filter { (event: Event) -> Bool in
             let doesCategoryMatch = eventType == .all || event.type == eventType?.rawValue ||
@@ -144,7 +144,7 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         tableView.reloadData()
     }
 
-    private func handleKeyboard(notification: Notification) {
+    private func handleKeyboardState(notification: Notification) {
         guard notification.name == UIResponder.keyboardWillChangeFrameNotification else {
             searchFooterBottomConstraint.constant = 0
             view.layoutIfNeeded()
@@ -204,14 +204,14 @@ extension EventsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
         let eventType = Event.EventType(rawValue: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
-        filterContentForSearchText(searchBar.text!, eventType: eventType)
+        filterTableViewContentForSearchText(searchBar.text ?? "", eventType: eventType)
     }
 }
 
 extension EventsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        let eventType = Event.EventType(rawValue: searchBar.scopeButtonTitles![selectedScope])
-        filterContentForSearchText(searchBar.text!, eventType: eventType)
+        let eventType = Event.EventType(rawValue: searchBar.scopeButtonTitles?[selectedScope] ?? "")
+        filterTableViewContentForSearchText(searchBar.text ?? "", eventType: eventType)
     }
 }
 

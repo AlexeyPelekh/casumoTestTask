@@ -8,26 +8,58 @@
 import XCTest
 @testable import casumoTestTask
 
-class casumoTestTaskTests: XCTestCase {
+final class casumoTestTaskTests: XCTestCase {
+    func testNetworkManagerGetsData() {
+        // arrange
+        let fakeNetworkManager = NetworkManagerMock()
+        let exp = expectation(description: "Network Manager response expectation")
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        fakeNetworkManager.request(url: fakeNetworkManager.eventsEndpoint) { response in
+            XCTAssertNotNil(response)
+            exp.fulfill()
         }
+
+        wait(for: [exp], timeout: 5)
     }
 
+    func testNetworkManagerReceivedError() {
+        // arrange
+        let fakeNetworkManager = NetworkManagerMock()
+        let fakeError = NSError(domain: "Nerwork Manager fake error", code: 123, userInfo: nil)
+        fakeNetworkManager.fakeResponse = .failure(fakeError)
+        let exp = expectation(description: "Network Manager response expectation")
+
+        fakeNetworkManager.request(url: fakeNetworkManager.eventsEndpoint) { response in
+            // assert
+            XCTAssert(fakeNetworkManager.invocationCount == 1)
+            XCTAssert(response.isFailure)
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 5)
+    }
+
+    func testNetworkManagerReceivedSuccess() {
+        // arrange
+        let fakeNetworkManager = NetworkManagerMock()
+        let jsonString = """
+{
+}
+"""
+        let fakeData = Data((jsonString.utf8))
+        fakeNetworkManager.fakeResponse = .success(fakeData)
+
+        let exp = expectation(description: "Network Manager fake data response")
+
+        // act
+        fakeNetworkManager.request(url: fakeNetworkManager.eventsEndpoint) { response in
+            // assert
+            XCTAssert(fakeNetworkManager.invocationCount == 1)
+            XCTAssert(response.isSuccess)
+            XCTAssertNotNil(response)
+            exp.fulfill()
+        }
+
+        wait(for: [exp], timeout: 5)
+    }
 }

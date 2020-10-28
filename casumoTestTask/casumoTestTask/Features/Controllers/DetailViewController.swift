@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var eventCreatedAtLabel: UILabel!
     @IBOutlet weak var eventDetailInfoTextField: UITextView!
     @IBOutlet weak var accessoryView: UIView!
-    
+
     var event: Event? {
         didSet {
             configureView()

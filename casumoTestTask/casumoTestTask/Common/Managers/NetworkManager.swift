@@ -7,7 +7,7 @@
 
 import Alamofire
 
-final class NetworkManager {
+class NetworkManager {
     private var sessionManager = Alamofire.SessionManager()
 
     func request(url: URLConvertible = Constants.eventsFinalUrl,
@@ -31,7 +31,7 @@ final class NetworkManager {
     }
 }
 
-private extension NetworkManager {
+extension NetworkManager {
     struct Constants {
         static let eventsFinalUrl = eventsBaseUrl + eventsPerPageQuery
         static let eventsBaseUrl = "https://api.github.com/events"
