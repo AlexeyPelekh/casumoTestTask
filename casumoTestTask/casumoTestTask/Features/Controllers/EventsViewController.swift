@@ -155,7 +155,8 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         guard let info = notification.userInfo,
               let keyboardFrame = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
 
-        let keyboardHeight = keyboardFrame.cgRectValue.size.height
+        let keyboardHeight = keyboardFrame.cgRectValue.size.height - self.view.safeAreaInsets.bottom
+
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.searchFooterBottomConstraint.constant = keyboardHeight
             self.view.layoutIfNeeded()
