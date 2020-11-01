@@ -7,6 +7,8 @@ end
 
 target 'casumoTestTask' do
    common_pods_ios
+   pod 'RxSwift'
+   pod 'RxCocoa'
 end
 
 target 'casumoTestTaskTests' do
