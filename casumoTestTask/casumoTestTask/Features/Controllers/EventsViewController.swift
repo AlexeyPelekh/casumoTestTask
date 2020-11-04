@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class EventsViewController: UIViewController, UITableViewDelegate {
 
@@ -16,9 +18,8 @@ class EventsViewController: UIViewController, UITableViewDelegate {
     private let searchController = UISearchController(searchResultsController: nil)
     private let refreshControl = UIRefreshControl()
 
-    private let networkManager = NetworkManager()
-    private var events: [Event] = []
-    private var filteredEvents: [Event] = []
+    private let disposeBag = DisposeBag()
+    private let viewModel = EventViewModel()
 
     var isSearchBarEmpty: Bool {
         return searchController.searchBar.text?.isEmpty ?? true
@@ -32,11 +33,8 @@ class EventsViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
-        setupRefreshControl()
-        setupSearchController()
-        setupNotifications()
-        getEvents()
+        setupUI()
+        viewModel.fetchProductList()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,37 +45,53 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         }
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == Constants.detailViewControllerSegueIdentifier,
-            let indexPath = tableView.indexPathForSelectedRow,
-            let detailViewController = segue.destination as? DetailViewController
-        else { return }
+    private func setupUI() {
+        setupReactiveBindings()
 
-        let event: Event?
-
-        if isFiltering {
-            event = filteredEvents[indexPath.row]
-        } else {
-            event = events[indexPath.row]
-        }
-
-        detailViewController.event = event
+        setupSearchController()
+        setupNotifications()
     }
 
-    @objc private func refresh(_ sender: AnyObject) {
-        getEvents()
+    private func setupReactiveBindings() {
+        setupTableView()
+        setupRefreshControl()
+
+        viewModel.filteredEvents
+            .bind(to: self.tableView.rx.items(cellIdentifier: Constants.eventTableViewCellIdentifier, cellType: EventTableViewCell.self)) { index, event, cell in
+                cell.eventTypeLabel?.text = event.type
+                cell.eventIdLabel?.text = event.id
+                cell.eventCreatedAtLabel?.text = event.created_at
+                cell.eventTypeColorView.backgroundColor = UIColor.colorForEventType(eventType: event.type)}
+            .disposed(by: disposeBag)
+
     }
 
     private func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView.register(UINib(nibName: Constants.eventTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: Constants.eventTableViewCellIdentifier)
+        tableView.addSubview(refreshControl)
 
-        tableView.register(UINib(nibName: Constants.eventTableViewCellIdentifier, bundle: Bundle.main), forCellReuseIdentifier: Constants.eventTableViewCellIdentifier)
+        tableView.rx
+            .setDelegate(self)
+            .disposed(by: disposeBag)
+
+        tableView.rx
+            .modelSelected(Event.self)
+            .subscribe(onNext: { [weak self] event in
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let detailViewController = storyBoard.instantiateViewController(withIdentifier: Constants.detailViewControllerIdentifier) as! DetailViewController
+                        detailViewController.event = event
+                        self?.navigationController?.pushViewController(detailViewController, animated: true)})
+            .disposed(by: disposeBag)
     }
 
     private func setupRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        refreshControl.rx
+            .controlEvent(UIControl.Event.valueChanged)
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.fetchProductList()
+                self?.refreshControl.endRefreshing()
+            })
+            .disposed(by: disposeBag)
     }
 
     private func setupSearchController() {
@@ -95,40 +109,20 @@ class EventsViewController: UIViewController, UITableViewDelegate {
         definesPresentationContext = true
     }
 
-    private func getEvents() {
-        networkManager.request { response in
-            switch response {
-            case .success(let data):
-                self.refreshControl.endRefreshing()
-                if let events = try? JSONDecoder().decode([Event].self, from: data) {
-                    self.events = events
-                    self.tableView.reloadData()
-                }
-
-            case .failure(let error):
-                let alert = UIAlertController(title: Constants.alertErrorTitle, message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: Constants.alertActionTitle, style: .default, handler: nil))
-
-                self.present(alert, animated: true)
-            }
-        }
-    }
-
     private func setupNotifications() {
         let notificationCenter = NotificationCenter.default
 
         notificationCenter.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification,
                                        object: nil, queue: .main) { (notification) in
             self.handleKeyboardState(notification: notification) }
-
         notificationCenter.addObserver(forName: UIResponder.keyboardWillHideNotification,
                                        object: nil, queue: .main) { (notification) in
             self.handleKeyboardState(notification: notification) }
     }
 
     private func filterTableViewContentForSearchText(_ searchText: String,
-                                            eventType: Event.EventType? = nil) {
-        filteredEvents = events.filter { (event: Event) -> Bool in
+                                                     eventType: Event.EventType? = nil) {
+        let filteredEvents = viewModel.events.value.filter { (event: Event) -> Bool in
             let doesCategoryMatch = eventType == .all || event.type == eventType?.rawValue ||
                 (eventType == .other && event.type != Event.EventType.pushEvent.rawValue && event.type != Event.EventType.pullRequestEvent.rawValue && event.type != Event.EventType.createEvent.rawValue)
 
@@ -141,7 +135,8 @@ class EventsViewController: UIViewController, UITableViewDelegate {
             }
         }
 
-        tableView.reloadData()
+        searchFooter.setIsFilteringToShow(filteredItemCount: filteredEvents.count, of: viewModel.events.value.count)
+        viewModel.filteredEvents.accept(filteredEvents)
     }
 
     private func handleKeyboardState(notification: Notification) {
@@ -164,43 +159,6 @@ class EventsViewController: UIViewController, UITableViewDelegate {
     }
 }
 
-extension EventsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView,
-                   numberOfRowsInSection section: Int) -> Int {
-        if isFiltering {
-            searchFooter.setIsFilteringToShow(filteredItemCount: filteredEvents.count, of: events.count)
-
-            return filteredEvents.count
-        }
-
-        searchFooter.setNotFiltering()
-
-        return events.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.eventTableViewCellIdentifier, for: indexPath) as! EventTableViewCell
-        let event: Event
-
-        if isFiltering {
-            event = filteredEvents[indexPath.row]
-        } else {
-            event = events[indexPath.row]
-        }
-
-        cell.eventTypeLabel?.text = event.type
-        cell.eventIdLabel?.text = event.id
-        cell.eventCreatedAtLabel?.text = event.created_at
-        cell.eventTypeColorView.backgroundColor = UIColor.colorForEventType(eventType: event.type)
-
-        return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: Constants.detailViewControllerSegueIdentifier, sender: indexPath)
-    }
-}
-
 extension EventsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -218,10 +176,8 @@ extension EventsViewController: UISearchBarDelegate {
 
 private extension EventsViewController {
     struct Constants {
-        static let detailViewControllerSegueIdentifier = "DetailViewController"
+        static let detailViewControllerIdentifier = "DetailViewController"
         static let eventTableViewCellIdentifier = "EventTableViewCell"
-        static let alertErrorTitle = "Error"
-        static let alertActionTitle = "Ok"
         static let searchBarPlaceholderText = "Search Events (by id)"
     }
 }
